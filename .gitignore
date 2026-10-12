@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+.venv/
+backend/data/
+node_modules/
+dist/
+.vercel/
+.env
+.env.*
+!.env.example

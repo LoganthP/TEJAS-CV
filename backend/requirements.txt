@@ -1,0 +1,16 @@
+# TEJAS-CV backend — all packages install from a local wheelhouse for air-gapped use
+# (see README: "Offline installation").
+fastapi>=0.115
+uvicorn[standard]>=0.30
+python-multipart>=0.0.9
+pydantic>=2.7
+SQLAlchemy>=2.0
+psycopg[binary]>=3.2
+numpy>=1.26
+scipy>=1.11
+pillow>=10.0
+ImageHash>=4.3
+cryptography>=42.0
+onnx>=1.16
+onnxruntime>=1.18
+PyYAML>=6.0

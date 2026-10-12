@@ -1,0 +1,9 @@
+services:
+  backend:
+    build: ./backend
+    ports: ["127.0.0.1:8000:8000"]
+    volumes: ["tejas-data:/data"]
+    environment:
+      TEJAS_CORS: "http://localhost:5173"
+volumes:
+  tejas-data:

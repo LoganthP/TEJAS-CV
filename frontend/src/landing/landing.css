@@ -1,0 +1,211 @@
+/* Scoped styles strictly under .landing-root */
+.landing-root {
+  background-color: #05070d;
+  color: #f8fafc;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* 40px Fine Technology Grid */
+.landing-root .tech-grid-pattern {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+}
+
+/* Slow radial glow */
+.landing-root .radial-glow-cyan {
+  background: radial-gradient(circle 600px at 50% 50%, rgba(34, 211, 238, 0.07), transparent 70%);
+}
+
+.landing-root .radial-glow-blue {
+  background: radial-gradient(circle 800px at 50% 50%, rgba(59, 130, 246, 0.05), transparent 75%);
+}
+
+/* Glassmorphism Cards: 20px radius, 1px white/10 border, inner top highlight */
+.landing-root .landing-card {
+  background-color: rgba(255, 255, 255, 0.035);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  box-shadow: 
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.12),
+    0 12px 32px -8px rgba(0, 0, 0, 0.5);
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+              border-color 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+}
+
+/* Hover effect: Rise 4px, border glow */
+@media (hover: hover) and (pointer: fine) {
+  .landing-root .landing-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(34, 211, 238, 0.35);
+    box-shadow: 
+      inset 0 1px 0 0 rgba(255, 255, 255, 0.2),
+      0 0 25px -4px rgba(34, 211, 238, 0.18),
+      0 20px 40px -10px rgba(0, 0, 0, 0.7);
+  }
+}
+
+/* Tricolour Accent Line */
+.landing-root .tricolor-hairline {
+  background: linear-gradient(
+    90deg,
+    #ff9933 0%,
+    #ff9933 33.3%,
+    #ffffff 33.3%,
+    #ffffff 66.6%,
+    #138808 66.6%,
+    #138808 100%
+  );
+}
+
+.landing-root .tricolor-hairline-glow {
+  box-shadow: 0 0 12px rgba(34, 211, 238, 0.4);
+}
+
+/* Radar scanline loop */
+@keyframes landing-scanline {
+  0% { transform: translateY(-100%); opacity: 0; }
+  15% { opacity: 0.7; }
+  85% { opacity: 0.7; }
+  100% { transform: translateY(1000%); opacity: 0; }
+}
+
+.landing-root .scan-sweep-active {
+  animation: landing-scanline 6s ease-in-out infinite;
+}
+
+/* Light sweep for hero title */
+@keyframes title-light-sweep {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.landing-root .title-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    #e2e8f0 35%,
+    #a5f3fc 50%,
+    #e2e8f0 65%,
+    #ffffff 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: title-light-sweep 4s ease-out 1 forwards;
+}
+
+/* SVG connector dash animation */
+@keyframes dash-flow {
+  0% { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.landing-root .animate-flow-dash {
+  animation: dash-flow 3s linear infinite;
+}
+
+/* Slow radar rotation */
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.landing-root .animate-radar {
+  animation: radar-sweep 16s linear infinite;
+  transform-origin: center center;
+}
+
+/* Breathing core animation */
+@keyframes core-breathe {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.85;
+  }
+  50% {
+    transform: scale(1.025);
+    opacity: 1;
+  }
+}
+
+.landing-root .animate-breathe {
+  animation: core-breathe 8s ease-in-out infinite;
+}
+
+/* Hash stream monospace fade */
+@keyframes hash-fade {
+  0%, 100% { opacity: 0.12; }
+  50% { opacity: 0.28; }
+}
+
+.landing-root .hash-flicker {
+  animation: hash-fade 5s ease-in-out infinite;
+}
+
+/* Card tilt container */
+.landing-root .tilt-wrap {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Section baseline: 100vh on desktop, centered */
+.landing-root .presentation-section {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 1.5rem;
+  scroll-margin-top: 4.5rem;
+  position: relative;
+  width: 100%;
+}
+
+@media (min-width: 1024px) {
+  .landing-root .presentation-section {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+/* Video / Presenter Mode overrides */
+.landing-root.presenter-mode .nav-bar-wrapper,
+.landing-root.presenter-mode .dot-nav-wrapper {
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease-out;
+}
+
+/* Prefers-reduced-motion: disable non-essential animations */
+@media (prefers-reduced-motion: reduce) {
+  .landing-root * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    transform: none !important;
+  }
+  .landing-root .scan-sweep-active,
+  .landing-root .animate-flow-dash,
+  .landing-root .animate-radar,
+  .landing-root .animate-breathe,
+  .landing-root .hash-flicker {
+    animation: none !important;
+  }
+  .landing-root .title-shimmer {
+    background: none !important;
+    -webkit-text-fill-color: #ffffff !important;
+  }
+}

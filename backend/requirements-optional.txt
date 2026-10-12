@@ -1,0 +1,5 @@
+# Optional: PyTorch / TorchScript adapter and DINOv2 embeddings.
+# Without these the platform still runs: ONNX models are fully supported and the
+# built-in handcrafted embedder is used (the report states which embedder ran).
+torch>=2.2
+torchvision>=0.17

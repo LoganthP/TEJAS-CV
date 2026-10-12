@@ -1,0 +1,83 @@
+datasets:
+  - id: "cifar10"
+    name: "CIFAR-10 Binary"
+    task: "classification"
+    url: "https://www.cs.toronto.edu/~kriz/cifar-10-binary.tar.gz"
+    licence: "MIT / Free for academic research"
+    citation: "Krizhevsky, A. (2009). Learning Multiple Layers of Features from Tiny Images. University of Toronto."
+    archive_sha256: ""
+    expected_layout: "cifar-10-batches-bin/ containing data_batch_1.bin .. data_batch_5.bin and test_batch.bin"
+    non_commercial: false
+
+  - id: "gtsrb"
+    name: "German Traffic Sign Recognition Benchmark (GTSRB)"
+    task: "classification"
+    url: "https://sid.erda.dk/public/archives/daaeac0d7ce1152aea9b61d9f1e19370/GTSRB-Training_fixed.zip"
+    licence: "CC BY-SA 4.0 / Free for research"
+    citation: "Stallkamp, J., Schlipsing, M., Salmen, J., & Igel, C. (2012). Man vs. computer: Benchmarking machine learning algorithms for traffic sign recognition. Neural Networks, 32, 323-332."
+    archive_sha256: ""
+    expected_layout: "GTSRB/Training/<class_id>/*.ppm and GT-*.csv"
+    non_commercial: false
+
+  - id: "cifar10_c"
+    name: "CIFAR-10-C (Corruptions)"
+    task: "shift"
+    url: "https://zenodo.org/record/2535967/files/CIFAR-10-C.tar"
+    licence: "Creative Commons Attribution 4.0 International"
+    citation: "Hendrycks, D., & Dietterich, T. (2019). Benchmarking Neural Network Robustness to Common Corruptions and Perturbations. ICLR 2019."
+    archive_sha256: ""
+    expected_layout: "CIFAR-10-C/*.npy arrays by corruption type (50000, 32, 32, 3) and labels.npy"
+    non_commercial: false
+
+  - id: "coco2017_val"
+    name: "MS COCO 2017 Validation Set"
+    task: "detection"
+    url: "http://images.cocodataset.org/zips/val2017.zip"
+    annotations_url: "http://images.cocodataset.org/annotations/annotations_trainval2017.zip"
+    licence: "CC BY 4.0 (Images Flickr CC, Annotations COCO Consortium)"
+    citation: "Lin, T. Y., Maire, M., Belongie, S., Hays, J., Perona, P., Ramanan, D., Dollar, P., & Zitnick, C. L. (2014). Microsoft COCO: Common Objects in Context. ECCV 2014."
+    archive_sha256: ""
+    expected_layout: "val2017/*.jpg images and annotations/instances_val2017.json"
+    non_commercial: false
+
+  - id: "yolo_coco8"
+    name: "Ultralytics COCO8 (YOLO format)"
+    task: "detection"
+    url: "https://github.com/ultralytics/assets/releases/download/v0.0.0/coco8.zip"
+    licence: "AGPL-3.0 / CC BY 4.0"
+    citation: "Ultralytics YOLO (2023). Ultralytics COCO8 dataset."
+    archive_sha256: ""
+    expected_layout: "coco8/images/ (train, val), coco8/labels/ (train, val), data.yaml"
+    non_commercial: false
+
+  - id: "backdoorbench"
+    name: "BackdoorBench Artifacts"
+    task: "model-trojan"
+    url: "TODO: Hosted on Google Drive / Zenodo per BackdoorBench release"
+    manual_download_url: "https://backdoorbench.github.io/"
+    licence: "Apache 2.0 / Academic research"
+    citation: "Wu, B., Chen, H., Zhang, M., Zhu, Z., Wei, S., Yuan, D., & Shen, C. (2022). BackdoorBench: A Comprehensive Benchmark of Backdoor Learning. NeurIPS 2022."
+    archive_sha256: ""
+    expected_layout: "attack_result folder containing model checkpoint .pt and bd_test_dataset"
+    non_commercial: false
+
+  - id: "trojai_round0"
+    name: "NIST TrojAI Round 0 / Round 1"
+    task: "model-trojan"
+    url: "TODO: NIST TrojAI Google Drive / Data Repository (requires agreement)"
+    manual_download_url: "https://pages.nist.gov/trojai/docs/data.html"
+    licence: "NIST Open Government Data / US Public Domain"
+    citation: "Karra, S., et al. (2020). The TrojAI Software Framework: An Overview. NIST."
+    archive_sha256: ""
+    expected_layout: "models/id-XXXXXXXX/model.pt and ground_truth.csv"
+    non_commercial: false
+
+  - id: "imagenet_c"
+    name: "ImageNet-C (Optional)"
+    task: "shift"
+    url: "https://zenodo.org/records/2235448"
+    licence: "Non-commercial / Academic Research Only (ImageNet Terms of Access)"
+    citation: "Hendrycks, D., & Dietterich, T. (2019). Benchmarking Neural Network Robustness to Common Corruptions and Perturbations. ICLR 2019."
+    archive_sha256: ""
+    expected_layout: "5 corruption category tar files (blur, digital, extra, noise, weather)"
+    non_commercial: true

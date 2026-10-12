@@ -1,0 +1,209 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 340" width="1200" height="340" role="img" aria-labelledby="t d">
+  <title id="t">TEJAS-CV</title>
+  <desc id="d">Trusted Evaluation and Judgement Assurance System for Computer Vision. Detect, explain, prove, decide.</desc>
+
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0a1020"/>
+      <stop offset="0.55" stop-color="#0f172a"/>
+      <stop offset="1" stop-color="#0a1428"/>
+    </linearGradient>
+
+    <!-- shimmering title gradient: cyan to blue, slowly sweeping -->
+    <linearGradient id="title" gradientUnits="userSpaceOnUse" x1="60" y1="0" x2="660" y2="0" spreadMethod="reflect">
+      <stop offset="0" stop-color="#a5f3fc"/>
+      <stop offset="0.5" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#3b82f6"/>
+      <animateTransform attributeName="gradientTransform" type="translate" from="0 0" to="1200 0" dur="10s" repeatCount="indefinite"/>
+    </linearGradient>
+
+    <linearGradient id="scan" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#22d3ee" stop-opacity="0.16"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0"/>
+    </linearGradient>
+
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#22d3ee" stop-opacity="0.30"/>
+      <stop offset="0.6" stop-color="#3b82f6" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#3b82f6" stop-opacity="0"/>
+    </radialGradient>
+
+    <radialGradient id="disc" cx="0.5" cy="0.4" r="0.7">
+      <stop offset="0" stop-color="#16243f"/>
+      <stop offset="1" stop-color="#0a1222"/>
+    </radialGradient>
+
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#ffffff" stroke-opacity="0.045" stroke-width="1"/>
+    </pattern>
+
+    <filter id="blur" x="-30%" y="-30%" width="160%" height="160%"><feGaussianBlur stdDeviation="9"/></filter>
+    <filter id="soft" x="-10%" y="-10%" width="120%" height="120%"><feGaussianBlur stdDeviation="0.6"/></filter>
+
+    <clipPath id="card"><rect width="1200" height="340" rx="16"/></clipPath>
+  </defs>
+
+  <style>
+    .mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace; }
+    .sans { font-family: "Segoe UI", Inter, -apple-system, Roboto, Helvetica, Arial, sans-serif; }
+    @keyframes rise { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes fade { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes lit  { 0%, 24% { opacity: 1; } 30%, 100% { opacity: .38; } }
+    @keyframes dash { to { stroke-dashoffset: -40; } }
+    @keyframes pulse { 0%, 100% { opacity: .35; } 50% { opacity: 1; } }
+    @keyframes drift { 0%, 100% { transform: translate(0, 0); } 50% { transform: translate(7px, -5px); } }
+    @keyframes blink { 0%, 55% { opacity: 1; } 60%, 100% { opacity: 0.25; } }
+    .a-label { animation: fade 1.2s ease-out .1s both; }
+    .a-title { animation: rise 1s cubic-bezier(.2,.7,.2,1) .25s both; }
+    .a-sub   { animation: rise 1s cubic-bezier(.2,.7,.2,1) .55s both; }
+    .a-tag   { animation: fade 1s ease-out .9s both; }
+    .w { animation: lit 6s linear infinite; }
+    .w1 { animation-delay: 0s; } .w2 { animation-delay: 1.5s; } .w3 { animation-delay: 3s; } .w4 { animation-delay: 4.5s; }
+    .flow  { stroke-dasharray: 5 7; animation: dash 1.6s linear infinite; }
+    .node  { animation: pulse 3.2s ease-in-out infinite; }
+    .n2 { animation-delay: .8s; } .n3 { animation-delay: 1.6s; } .n4 { animation-delay: 2.4s; }
+    .box   { animation: drift 7s ease-in-out infinite; }
+    .tag   { animation: blink 2.4s steps(1) infinite; }
+    @media (prefers-reduced-motion: reduce) { * { animation: none !important; } }
+  </style>
+
+  <g clip-path="url(#card)">
+    <rect width="1200" height="340" fill="url(#bg)"/>
+    <rect width="1200" height="340" fill="url(#grid)"/>
+    <ellipse cx="985" cy="162" rx="330" ry="250" fill="url(#glow)"/>
+    <ellipse cx="170" cy="40" rx="260" ry="120" fill="#3b82f6" opacity="0.07" filter="url(#blur)"/>
+
+    <!-- drifting data points -->
+    <g fill="#67e8f9">
+      <circle cx="120" cy="60" r="1.6" opacity=".5"><animate attributeName="cy" values="60;48;60" dur="7s" repeatCount="indefinite"/><animate attributeName="opacity" values=".15;.7;.15" dur="7s" repeatCount="indefinite"/></circle>
+      <circle cx="310" cy="300" r="1.4" opacity=".4"><animate attributeName="cy" values="300;288;300" dur="9s" repeatCount="indefinite"/><animate attributeName="opacity" values=".1;.6;.1" dur="9s" repeatCount="indefinite"/></circle>
+      <circle cx="560" cy="48" r="1.8" opacity=".5"><animate attributeName="cy" values="48;60;48" dur="8s" repeatCount="indefinite"/><animate attributeName="opacity" values=".2;.8;.2" dur="8s" repeatCount="indefinite"/></circle>
+      <circle cx="720" cy="290" r="1.5" opacity=".4"><animate attributeName="cy" values="290;278;290" dur="6.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".1;.7;.1" dur="6.5s" repeatCount="indefinite"/></circle>
+      <circle cx="800" cy="95" r="1.4" opacity=".4"><animate attributeName="cy" values="95;107;95" dur="10s" repeatCount="indefinite"/><animate attributeName="opacity" values=".1;.6;.1" dur="10s" repeatCount="indefinite"/></circle>
+      <circle cx="1170" cy="60" r="1.6" opacity=".4"><animate attributeName="cy" values="60;72;60" dur="8.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".1;.7;.1" dur="8.5s" repeatCount="indefinite"/></circle>
+      <circle cx="1160" cy="285" r="1.6" opacity=".4"><animate attributeName="cy" values="285;273;285" dur="7.5s" repeatCount="indefinite"/><animate attributeName="opacity" values=".1;.7;.1" dur="7.5s" repeatCount="indefinite"/></circle>
+    </g>
+
+    <!-- scanning beam -->
+    <rect x="-220" y="0" width="220" height="340" fill="url(#scan)">
+      <animateTransform attributeName="transform" type="translate" from="0 0" to="1500 0" dur="7s" repeatCount="indefinite"/>
+    </rect>
+
+    <!-- ================= LEFT: TEXT ================= -->
+    <g class="a-label">
+      <rect x="60" y="62" width="3" height="16" fill="#22d3ee"/>
+      <text x="74" y="75" class="mono" font-size="13" letter-spacing="3.5" fill="#67e8f9">OFFLINE · AI INTEGRITY ASSURANCE</text>
+    </g>
+
+    <g class="a-title">
+      <text x="56" y="172" class="sans" font-size="104" font-weight="800" letter-spacing="-2" fill="#22d3ee" opacity=".35" filter="url(#blur)">TEJAS-CV</text>
+      <text x="56" y="172" class="sans" font-size="104" font-weight="800" letter-spacing="-2" fill="url(#title)">TEJAS-CV</text>
+    </g>
+
+    <g class="a-sub">
+      <text x="62" y="214" class="sans" font-size="19.5" fill="#cbd5e1">Trusted Evaluation &amp; Judgement Assurance System</text>
+      <text x="62" y="240" class="sans" font-size="19.5" fill="#cbd5e1">for Computer Vision</text>
+    </g>
+
+    <g class="a-tag">
+      <text x="62" y="283" class="mono" font-size="17" font-weight="700" letter-spacing="3.5">
+        <tspan class="w w1" fill="#67e8f9">DETECT</tspan><tspan fill="#475569"> • </tspan><tspan class="w w2" fill="#67e8f9">EXPLAIN</tspan><tspan fill="#475569"> • </tspan><tspan class="w w3" fill="#67e8f9">PROVE</tspan><tspan fill="#475569"> • </tspan><tspan class="w w4" fill="#67e8f9">DECIDE</tspan>
+      </text>
+    </g>
+
+    <!-- ================= RIGHT: ASSURANCE CORE ================= -->
+    <g transform="translate(985 162)">
+      <!-- rotating rings -->
+      <circle r="120" fill="none" stroke="#22d3ee" stroke-opacity=".28" stroke-width="1.2" stroke-dasharray="3 9">
+        <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="60s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="100" fill="none" stroke="#3b82f6" stroke-opacity=".30" stroke-width="1">
+        <animate attributeName="stroke-opacity" values=".15;.5;.15" dur="4s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="72" fill="none" stroke="#22d3ee" stroke-opacity=".35" stroke-width="1.2" stroke-dasharray="14 10">
+        <animateTransform attributeName="transform" type="rotate" from="360" to="0" dur="38s" repeatCount="indefinite"/>
+      </circle>
+
+      <!-- data flowing in from the four engines -->
+      <g stroke="#22d3ee" stroke-opacity=".6" stroke-width="1.4" fill="none">
+        <line class="flow" x1="0" y1="-102" x2="0" y2="-48"/>
+        <line class="flow" x1="86" y1="0" x2="48" y2="0"/>
+        <line class="flow" x1="0" y1="102" x2="0" y2="48"/>
+        <line class="flow" x1="-86" y1="0" x2="-48" y2="0"/>
+      </g>
+
+      <!-- core disc whose verdict cycles ACCEPT / REVIEW / QUARANTINE -->
+      <circle r="52" fill="#22d3ee" opacity=".12" filter="url(#blur)">
+        <animate attributeName="fill" values="#34d399;#fbbf24;#fb7185;#34d399" keyTimes="0;0.3333;0.6667;1" calcMode="discrete" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <circle r="46" fill="url(#disc)" stroke="#34d399" stroke-width="2">
+        <animate attributeName="stroke" values="#34d399;#fbbf24;#fb7185" keyTimes="0;0.3333;0.6667" calcMode="discrete" dur="9s" repeatCount="indefinite"/>
+      </circle>
+      <text y="-9" text-anchor="middle" class="mono" font-size="9" letter-spacing="2" fill="#94a3b8">VERDICT</text>
+      <g class="mono" font-size="11.5" font-weight="700" text-anchor="middle" letter-spacing=".5">
+        <text y="11" fill="#34d399">ACCEPT<animate attributeName="opacity" values="1;0;0" keyTimes="0;0.3333;0.6667" calcMode="discrete" dur="9s" repeatCount="indefinite"/></text>
+        <text y="11" fill="#fbbf24" opacity="0">REVIEW<animate attributeName="opacity" values="0;1;0" keyTimes="0;0.3333;0.6667" calcMode="discrete" dur="9s" repeatCount="indefinite"/></text>
+        <text y="11" fill="#fb7185" opacity="0" font-size="10.5">QUARANTINE<animate attributeName="opacity" values="0;0;1" keyTimes="0;0.3333;0.6667" calcMode="discrete" dur="9s" repeatCount="indefinite"/></text>
+      </g>
+
+      <!-- the four assurance engines -->
+      <g class="mono" font-size="11" font-weight="700" text-anchor="middle" letter-spacing="1.5">
+        <g class="node">
+          <rect x="-36" y="-130" width="72" height="26" rx="13" fill="#0b1426" stroke="#22d3ee" stroke-opacity=".7"/>
+          <circle cx="-24" cy="-117" r="3" fill="#22d3ee"/>
+          <text x="6" y="-113" fill="#e0f2fe">DATA</text>
+        </g>
+        <g class="node n2">
+          <rect x="88" y="-13" width="82" height="26" rx="13" fill="#0b1426" stroke="#22d3ee" stroke-opacity=".7"/>
+          <circle cx="100" cy="0" r="3" fill="#22d3ee"/>
+          <text x="135" y="4" fill="#e0f2fe">MODEL</text>
+        </g>
+        <g class="node n3">
+          <rect x="-62" y="104" width="124" height="26" rx="13" fill="#0b1426" stroke="#22d3ee" stroke-opacity=".7"/>
+          <circle cx="-49" cy="117" r="3" fill="#22d3ee"/>
+          <text x="6" y="121" fill="#e0f2fe">PROVENANCE</text>
+        </g>
+        <g class="node n4">
+          <rect x="-170" y="-13" width="82" height="26" rx="13" fill="#0b1426" stroke="#22d3ee" stroke-opacity=".7"/>
+          <circle cx="-158" cy="0" r="3" fill="#22d3ee"/>
+          <text x="-123" y="4" fill="#e0f2fe">DRIFT</text>
+        </g>
+      </g>
+
+      <!-- computer-vision detail: a tracked object with corner brackets -->
+      <g class="box">
+        <g stroke="#34d399" stroke-width="2" fill="none" stroke-linecap="round">
+          <path d="M64 -88 h-10 v10"/><path d="M98 -88 h10 v10"/>
+          <path d="M64 -56 h-10 v-10"/><path d="M98 -56 h10 v-10"/>
+        </g>
+        <g class="tag"><rect x="52" y="-106" width="62" height="14" rx="3" fill="#34d399" fill-opacity=".16" stroke="#34d399" stroke-opacity=".6" stroke-width=".8"/>
+        <text x="83" y="-96" text-anchor="middle" class="mono" font-size="9" font-weight="700" fill="#6ee7b7">CONF 0.97</text></g>
+      </g>
+    </g>
+
+    <!-- ================= BOTTOM: HASH CHAIN ================= -->
+    <g class="mono" font-size="9" opacity=".95">
+      <g id="chain">
+        <rect x="560" y="308" width="104" height="20" rx="4" fill="#0f1b33" stroke="#334155" stroke-width=".8"/><text x="572" y="322" fill="#64748b">#38 · 7f3a…c91</text>
+        <path d="M664 318 h14" stroke="#334155" stroke-width="1.2"/>
+        <rect x="678" y="308" width="104" height="20" rx="4" fill="#0f1b33" stroke="#334155" stroke-width=".8"/><text x="690" y="322" fill="#64748b">#39 · a21e…04d</text>
+        <path d="M782 318 h14" stroke="#334155" stroke-width="1.2"/>
+        <rect x="796" y="308" width="104" height="20" rx="4" fill="#0f1b33" stroke="#334155" stroke-width=".8"/><text x="808" y="322" fill="#64748b">#40 · 5bd8…e72</text>
+        <path d="M900 318 h14" stroke="#334155" stroke-width="1.2"/>
+        <rect x="914" y="308" width="104" height="20" rx="4" fill="#0f1b33" stroke="#334155" stroke-width=".8"/><text x="926" y="322" fill="#64748b">#41 · c902…1fa</text>
+        <path d="M1018 318 h14" stroke="#334155" stroke-width="1.2"/>
+        <rect x="1032" y="308" width="104" height="20" rx="4" fill="#0f1b33" stroke="#22d3ee" stroke-opacity=".7" stroke-width="1"/><text x="1044" y="322" fill="#67e8f9">#42 · 8e60…b37</text>
+      </g>
+      <!-- packet travelling along the chain -->
+      <circle cy="318" r="3" fill="#22d3ee">
+        <animate attributeName="cx" values="560;1136" dur="5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.1;0.9;1" dur="5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+    <text x="60" y="322" class="mono" font-size="10" letter-spacing="2" fill="#5b6b82">SHA-256 · MERKLE · ED25519 · HASH-CHAINED LEDGER</text>
+
+    <!-- frame -->
+    <rect x=".5" y=".5" width="1199" height="339" rx="16" fill="none" stroke="#1e293b"/>
+  </g>
+</svg>
